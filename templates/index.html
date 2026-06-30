@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}FinSight — Analyse Earnings Call{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <h1>Analyse Any Earnings Call</h1>
+    <p class="subtitle">
+        Paste a transcript. Get structured KPIs, grounded sentiment analysis,
+        cited risk factors, and an auditable risk index — powered by LLM extraction
+        and deterministic OR-based scoring.
+    </p>
+
+    <form action="{{ url_for('analyse') }}" method="POST" class="transcript-form">
+        <textarea
+            name="transcript"
+            rows="14"
+            placeholder="Paste the full earnings call transcript here..."
+            required
+        ></textarea>
+        <button type="submit">Analyse Transcript</button>
+    </form>
+
+    {% if error %}
+        <p class="error-msg">{{ error }}</p>
+    {% endif %}
+</section>
+{% endblock %}

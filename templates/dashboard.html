@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+{% block title %}FinSight — Analysis Dashboard{% endblock %}
+
+{% block content %}
+
+<a href="{{ url_for('index') }}" class="back-link">← Analyse another transcript</a>
+
+<section class="risk-index-card risk-{{ risk_score.risk_band | lower | replace(' ', '-') }}">
+    <div class="risk-index-main">
+        <span class="risk-index-number">{{ risk_score.risk_index }}</span>
+        <span class="risk-index-label">/ 100</span>
+    </div>
+    <span class="risk-band-tag">{{ risk_score.risk_band }}</span>
+    <p class="methodology-note">{{ risk_score.methodology_note }}</p>
+</section>
+
+<div class="components-grid">
+    <div class="component-card">
+        <h3>Risk Factor Score</h3>
+        <span class="component-value">{{ risk_score.components.risk_factor_score }} / 70</span>
+    </div>
+    <div class="component-card">
+        <h3>Sentiment Score</h3>
+        <span class="component-value">{{ risk_score.components.sentiment_score }} / 30</span>
+    </div>
+</div>
+
+<section class="panel">
+    <h2>📈 Financial KPIs Extracted</h2>
+    <div class="kpi-grid">
+        {% if analysis.kpis.revenue_mentioned %}
+            <div class="kpi-item"><span class="kpi-label">Revenue</span><span class="kpi-value">{{ analysis.kpis.revenue_mentioned }}</span></div>
+        {% endif %}
+        {% if analysis.kpis.revenue_growth_yoy %}
+            <div class="kpi-item"><span class="kpi-label">YoY Growth</span><span class="kpi-value">{{ analysis.kpis.revenue_growth_yoy }}</span></div>
+        {% endif %}
+        {% if analysis.kpis.guidance_given %}
+            <div class="kpi-item full-width"><span class="kpi-label">Guidance</span><span class="kpi-value">{{ analysis.kpis.guidance_summary }}</span></div>
+        {% endif %}
+    </div>
+    {% if analysis.kpis.key_metrics %}
+        <div class="metric-tags">
+            {% for metric in analysis.kpis.key_metrics %}
+                <span class="metric-tag">{{ metric }}</span>
+            {% endfor %}
+        </div>
+    {% endif %}
+</section>
+
+<section class="panel">
+    <h2>🎙️ Management Sentiment</h2>
+    <span class="sentiment-badge sentiment-{{ analysis.sentiment.sentiment }}">
+        {{ analysis.sentiment.sentiment | capitalize }}
+        ({{ (analysis.sentiment.confidence * 100) | round | int }}% confidence)
+    </span>
+    <p class="reasoning-text">{{ analysis.sentiment.reasoning }}</p>
+
+    {% if analysis.sentiment.supporting_phrases %}
+        <h4>Supporting Evidence:</h4>
+        <ul class="evidence-list">
+            {% for phrase in analysis.sentiment.supporting_phrases %}
+                <li>"{{ phrase }}"</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</section>
+
+<section class="panel">
+    <h2>⚠️ Risk Factors Identified</h2>
+    <div class="overall-risk">
+        Overall Risk Level:
+        <span class="risk-tag risk-tag-{{ analysis.risks.overall_risk_level }}">
+            {{ analysis.risks.overall_risk_level | capitalize }}
+        </span>
+    </div>
+
+    {% for risk in analysis.risks.risks_identified %}
+    <div class="risk-card severity-{{ risk.severity }}">
+        <div class="risk-card-header">
+            <span class="risk-category-tag">{{ risk.risk_category | capitalize }}</span>
+            <span class="severity-tag severity-tag-{{ risk.severity }}">{{ risk.severity | capitalize }}</span>
+        </div>
+        <p class="risk-description">{{ risk.description }}</p>
+        <p class="risk-quote">"{{ risk.supporting_quote }}"</p>
+    </div>
+    {% endfor %}
+</section>
+
+<section class="panel">
+    <h2>💰 OR-Based Provisioning Allocation</h2>
+    <p class="panel-subtitle">
+        Linear programming solution — optimal budget allocation across identified risks
+        (Budget: ₹{{ allocation.total_budget }} cr · Status: {{ allocation.solver_status }})
+    </p>
+
+    <table class="allocation-table">
+        <thead>
+            <tr>
+                <th>Risk</th>
+                <th>Severity</th>
+                <th>Allocated Budget</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in allocation.allocations %}
+            <tr>
+                <td>{{ item.risk_description }}</td>
+                <td><span class="severity-tag severity-tag-{{ item.severity }}">{{ item.severity | capitalize }}</span></td>
+                <td>₹{{ item.allocated_budget_cr }} cr</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+
+{% endblock %}

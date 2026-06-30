@@ -1,0 +1,31 @@
+Q2 FY26 Earnings Call - Apex Financial Services Ltd.
+
+CFO Remarks:
+
+Thank you all for joining. Let me walk you through our Q2 performance.
+
+Total revenue for the quarter stood at INR 1,240 crore, up 18% year-over-year. Net interest margin improved to 7.2% from 6.8% in the previous quarter, driven by better asset mix and disciplined cost of funds management.
+
+Our gross non-performing asset ratio increased slightly to 2.8% from 2.4% last quarter, primarily due to stress in the unsecured personal loan segment following the regulatory tightening on risk weights. We have proactively increased our provisioning coverage ratio to 68% as a precautionary measure.
+
+Disbursements grew 22% year-over-year, though we are seeing some moderation in the microfinance segment due to over-leveraging concerns in certain geographies, particularly in parts of Tamil Nadu and Karnataka. We are taking a calibrated approach here and have tightened underwriting norms for that segment.
+
+On the digital lending front, our partnership-led originations now contribute 31% of total disbursements, up from 24% last year. We expect this to cross 40% by year end.
+
+Looking ahead, we are maintaining our full-year guidance of 20-22% loan book growth, though we want to flag that the operating environment remains somewhat uncertain given the evolving regulatory landscape around digital lending and co-lending norms.
+
+We remain confident in our liquidity position with a comfortable liquidity coverage ratio well above regulatory requirements, and we have no immediate plans for additional capital raise this fiscal year.
+
+Q&A Session:
+
+Analyst: Can you comment on the asset quality trends in the personal loan book specifically?
+
+CFO: Yes, so within personal loans, we have seen delinquencies tick up in the sub-25,000 ticket size segment, which is more sensitive to macro stress. We've already tightened our credit filters there starting last quarter, and we expect the impact of that tightening to show up in originations data over the next two quarters. We are watching this closely.
+
+Analyst: Are you concerned about the competitive intensity from fintech NBFCs in this space?
+
+CFO: There's no doubt competition has intensified, especially in the digital-first segment. That said, our cost of funds advantage and our deep distribution network in tier 2 and tier 3 cities gives us a structural edge that's hard to replicate quickly. We're not complacent, but we're also not panicking.
+
+Analyst: Any update on the RBI's stance on co-lending guidelines?
+
+CFO: We continue to engage constructively with the regulator. The current guidelines are workable for our model, though any further tightening on first-loss default guarantee structures could moderate our co-lending growth rate. We've built some conservatism into our guidance to account for this possibility.
