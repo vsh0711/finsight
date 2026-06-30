@@ -2,7 +2,7 @@
 
 An end-to-end LLM application that extracts structured financial intelligence from unstructured earnings call transcripts, and converts qualitative LLM outputs into a fully auditable, deterministic risk score using Operations Research-based optimization.
 
-**Live Demo → [your-render-url-here]**
+**Live Demo → [finsight-4b3w.onrender.com](https://finsight-4b3w.onrender.com/)**
 
 ---
 
