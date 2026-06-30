@@ -142,14 +142,12 @@ Free API keys: [Groq Console](https://console.groq.com) · [LangSmith](https://s
 
 ## Portfolio Context
 
-Built as part of a 5-project LLM/RAG/Agent portfolio targeting Data Science / ML Engineering / AI Consulting roles in BFSI and Fintech, demonstrating:
+Built as part of  LLM/RAG/Agent portfolio targeting Data Science / ML Engineering / AI Consulting roles in BFSI and Fintech, demonstrating:
 
 - Production LLM application design (prompt decomposition, structured outputs, hallucination mitigation)
 - Neuro-symbolic architecture combining LLM extraction with OR-based deterministic scoring
 - LLMOps observability practices (tracing, token/cost monitoring)
 - End-to-end deployment (Flask + Gunicorn + Render)
-
-This is Project 1 of 5. Next: **CreditLens** — a RAG-powered credit risk explainer introducing vector embeddings and retrieval-augmented generation.
 
 ---
 
